@@ -125,6 +125,7 @@ function addToOutput(content, className, isHTML = false) {
 // Clear the output
 function clearOutput() {
     output.innerHTML = '';
+    input.value = '';
 }
 
 // Scroll to bottom of output
