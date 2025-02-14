@@ -1,0 +1,173 @@
+/* Base styles */
+:root {
+    --background: #1a1d21;
+    --foreground: #d1d5db;
+    --primary: #b388ff;
+    --muted: #8f9fbc;
+    --accent: #4a9eff;
+    --accent-hover: #6ab0ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    font-family: Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Terminal styles */
+.terminal {
+    width: 100%;
+    max-width: 48rem;
+}
+
+.terminal-content {
+    width: 100%;
+}
+
+.header {
+    margin-bottom: 2rem;
+}
+
+.prompt {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+.title {
+    color: var(--muted);
+    font-size: 2.25rem;
+    font-weight: bold;
+}
+
+/* Output area */
+.output-container {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    max-height: 60vh;
+    overflow: hidden;
+}
+
+.output {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+.output::-webkit-scrollbar {
+    display: none;
+}
+
+.output {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Command output styles */
+.command-line {
+    color: var(--foreground);
+    word-break: break-word;
+    margin-bottom: 0.25rem;
+}
+
+.response {
+    color: var(--muted);
+    margin-left: 1rem;
+    white-space: pre-line;
+    word-break: break-word;
+    margin-bottom: 1rem;
+}
+
+/* Help command grid */
+.help-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    margin-bottom: 1rem;
+}
+
+.help-command {
+    margin-left: 1rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.help-command:hover {
+    color: var(--accent);
+}
+
+.help-description {
+    color: var(--muted);
+}
+
+/* Input area */
+.hint {
+    margin-top: 2rem;
+    font-size: 0.875rem;
+}
+
+.accent {
+    color: var(--accent);
+}
+
+.input-line {
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+}
+
+.prompt-symbol {
+    margin-right: 0.5rem;
+}
+
+.terminal-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--foreground);
+    font-family: inherit;
+    font-size: inherit;
+    flex: 1;
+    margin-left: 0.5rem;
+}
+
+/* Cursor animation */
+.cursor {
+    width: 0.5rem;
+    height: 1.25rem;
+    background-color: var(--foreground);
+    margin-left: 0.25rem;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+}
